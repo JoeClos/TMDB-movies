@@ -1,0 +1,66 @@
+html{
+  background-color: black;
+
+}
+.App{
+  background-color: black;
+
+}
+.parent {
+  width: 100%;
+  height: auto;
+  display: grid;
+  margin: 1rem;
+  padding: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 15px;
+  row-gap: 15px;
+  background-color: black;
+
+}
+
+.item{
+  box-sizing: border-box;
+  
+}
+
+.avatar {
+  max-width: 100%;
+  height: auto;
+  transition: transform .3s;
+  border-radius: 1rem;
+}
+
+a .avatar:hover{
+  transform: scale(1.1); 
+}
+
+@media only screen and (max-width: 1025px) {
+  .parent{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  }
+}
+@media only screen and (max-width: 769px) {
+  .parent{
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .parent{
+    grid-template-columns: 1fr 1fr ;
+
+  }
+}
+@media only screen and (max-width: 376px) {
+  .parent{
+    grid-template-columns: auto;
+
+  }
+}
+
+
+
