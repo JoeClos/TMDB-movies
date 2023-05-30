@@ -6,6 +6,8 @@ import { api } from "../service/api";
 const Movie = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState([]);
+  
+  
   const [error, setError] = useState();
 
   useEffect(() => {
@@ -51,7 +53,7 @@ const Movie = () => {
       <div>
         <p>Release: {movie.release_date}</p>
         <div style={{ display: "flex", gap: "1rem" }}>
-          <p>Production countries:</p>
+          <p>Production:</p>
           {movie.production_countries &&
             movie.production_countries.map((c, index) => <p key={index}>{c.name}</p>)}
         </div>

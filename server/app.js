@@ -59,16 +59,15 @@ app.get("/movie/:id", (request, response) => {
     });
 });
 
-// Get movies images
-app.get("/images", (request, response) => {
+// Get reviews
+
+app.get("/reviews/:id", (request, response) => {
   response.header({ "Access-Control-Allow-Origin": "*" });
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/configuration",
-    headers: {
+    url: 'https://api.themoviedb.org/3/movie/502356/credits?language=en-US',    headers: {
       accept: "application/json",
-      Authorization:
-        token
+      Authorization: token,
     },
   };
   axios
@@ -81,6 +80,29 @@ app.get("/images", (request, response) => {
       console.error(error);
     });
 });
+
+// Get movies images
+// app.get("/images", (request, response) => {
+//   response.header({ "Access-Control-Allow-Origin": "*" });
+//   const options = {
+//     method: "GET",
+//     url: "https://api.themoviedb.org/3/configuration",
+//     headers: {
+//       accept: "application/json",
+//       Authorization:
+//         token
+//     },
+//   };
+//   axios
+//     .request(options)
+//     .then((res) => {
+//       response.send(res.data);
+//       // console.log(res.data);
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+// });
 
 app.listen(port, () => {
   console.log(`Now listening on port ${port}`);
