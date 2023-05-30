@@ -35,7 +35,6 @@ app.get("/movies", (request, response) => {
 });
 
 // Get movies by ID
-
 app.get("/movie/:id", (request, response) => {
   response.header({ "Access-Control-Allow-Origin": "*" });
   const options = {
@@ -55,28 +54,6 @@ app.get("/movie/:id", (request, response) => {
     .catch((error) => {
       response.status(400);
       response.send(err.config.data || "Couldn't fetch data!");
-      console.error(error);
-    });
-});
-
-// Get reviews
-
-app.get("/reviews/:id", (request, response) => {
-  response.header({ "Access-Control-Allow-Origin": "*" });
-  const options = {
-    method: "GET",
-    url: 'https://api.themoviedb.org/3/movie/502356/credits?language=en-US',    headers: {
-      accept: "application/json",
-      Authorization: token,
-    },
-  };
-  axios
-    .request(options)
-    .then((res) => {
-      response.send(res.data);
-      // console.log(res.data);
-    })
-    .catch((error) => {
       console.error(error);
     });
 });
