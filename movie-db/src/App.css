@@ -1,9 +1,9 @@
-html{
-  background-color: black;
+/* html{
+  background-color: #080637;
 
-}
+} */
 .App{
-  background-color: black;
+  background-color: #080637;
 
 }
 .parent {
@@ -16,7 +16,7 @@ html{
   grid-template-rows: auto;
   column-gap: 15px;
   row-gap: 15px;
-  background-color: black;
+  background-color: #080637;
 
 }
 

@@ -5,6 +5,8 @@ const app = express();
 const cors = require("cors");
 const port = process.env.PORT || 8000;
 const token = process.env.AUTH;
+const urlMain = process.env.URL;
+const movies_now_playing = urlMain + "now_playing?language=en-US&page=1";
 
 app.use(cors());
 
@@ -17,7 +19,7 @@ app.get("/movies", (request, response) => {
   response.header({ "Access-Control-Allow-Origin": "*" });
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
+    url: movies_now_playing,
     headers: {
       accept: "application/json",
       Authorization: token,
