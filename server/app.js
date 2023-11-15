@@ -41,7 +41,7 @@ app.get("/movie/:id", (request, response) => {
   response.header({ "Access-Control-Allow-Origin": "*" });
   const options = {
     method: "GET",
-    url: `https://api.themoviedb.org/3/movie/${Number(request.params.id)}`,
+    url: `urlMain + ${Number(request.params.id)}`,
     headers: {
       accept: "application/json",
       Authorization: token,

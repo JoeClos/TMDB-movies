@@ -1,4 +1,4 @@
-import { Paper, Divider, InputBase, IconButton } from "@mui/material";
+import { Paper, InputBase} from "@mui/material";
 
 const Search = ({ handleSearch }) => {
   return (
